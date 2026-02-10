@@ -1,0 +1,54 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-red: #8b0000;    /* Rojo profundo corporativo */
+    --secondary-red: #a50000;  /* Rojo más claro para hovers */
+    --bg-light: #f3f4f6;       /* Fondo grisáceo muy suave */
+    --text-dark: #1f2937;      /* Gris casi negro para textos */
+    --text-muted: #6b7280;     /* Gris para etiquetas y secundarios */
+    --white: #ffffff;
+    --border-color: #d1d5db;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Fuente profesional y legible */
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-red);
+}

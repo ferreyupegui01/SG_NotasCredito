@@ -1,0 +1,121 @@
+/* src/styles/login.css */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    padding: 15px;
+}
+
+/* Reducimos dimensiones generales de la tarjeta */
+.login-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 850px; /* Bajamos de 1100px a 850px */
+    min-height: 500px; /* Bajamos de 650px a 500px */
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Lado Izquierdo (Rojo Corporativo) */
+.login-left {
+    flex: 1;
+    background: linear-gradient(135deg, #8b0000 0%, #5a0000 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 35px; /* Padding más ajustado */
+    position: relative;
+}
+
+.btn-volver {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.login-left h1 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem); /* Fuente más pequeña */
+    line-height: 1.2;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.divider-line {
+    width: 80px;
+    height: 4px;
+    background-color: #fbbf24;
+    margin-bottom: 25px;
+}
+
+.login-left p {
+    font-size: 0.95rem; /* Texto más pequeño */
+    opacity: 0.85;
+}
+
+/* Lado Derecho (Blanco) */
+.login-right {
+    flex: 1.1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img { width: 190px; height: auto; } /* Logo más pequeño */
+
+.login-right h2 { color: #6b7280; font-size: 1.1rem; font-weight: 400; }
+.login-right h3 { color: #111827; font-size: 1.6rem; margin-bottom: 30px; font-weight: 700; }
+
+.form-group { width: 100%; max-width: 320px; margin-bottom: 18px; }
+.form-group label { display: block; color: #6b7280; font-size: 0.85rem; margin-bottom: 5px; }
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 14px; /* Inputs más delgados */
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.btn-ingresar {
+    width: 100%;
+    max-width: 320px;
+    background-color: #8b0000;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* =============================================
+   Móviles y Tablets (Responsivo)
+   ============================================= */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+        max-width: 400px;
+    }
+
+    .login-left {
+        padding: 30px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .login-left h1 { font-size: 1.5rem; }
+    .login-right { padding: 30px 20px; }
+}

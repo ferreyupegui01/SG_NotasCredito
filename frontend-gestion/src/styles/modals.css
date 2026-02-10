@@ -1,0 +1,222 @@
+/* =========================================================
+   1. ESTILOS BASE (TU CÓDIGO ORIGINAL RESTAURADO)
+   Estos estilos controlan los formularios de Registro y Usuario
+   ========================================================= */
+
+/* OVERLAY (FONDO OSCURO) */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+/* CARD DEL MODAL (Estándar para formularios) */
+.modal-card {
+    background: white;
+    padding: 35px; /* Mantenemos el padding original */
+    border-radius: 16px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-title {
+    color: #8b0000;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    border-bottom: 3px solid #fbbf24;
+    padding-bottom: 10px;
+}
+
+/* GRILLA DEL FORMULARIO */
+.modal-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-item { display: flex; flex-direction: column; gap: 6px; }
+.form-item.full { grid-column: span 2; }
+
+.form-item label {
+    font-size: 0.85rem;
+    font-weight: 650;
+    color: #475569;
+}
+
+.form-item input, .form-item select {
+    padding: 12px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form-item input:focus { border-color: #8b0000; }
+
+/* GRILLA DE DETALLES (Estilo Base) */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.detail-item { display: flex; flex-direction: column; gap: 4px; }
+.detail-item label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    font-weight: 800;
+}
+
+.detail-item span {
+    font-size: 1rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.detail-full {
+    grid-column: span 2;
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #8b0000;
+}
+
+/* BOTONES DEL MODAL */
+.modal-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.modal-actions.full {
+    grid-column: span 2;
+}
+
+.btn-confirm {
+    background-color: #8b0000;
+    color: white;
+    flex: 1;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    border: none;
+}
+
+.btn-cancel {
+    background-color: #e2e8f0;
+    color: #475569;
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .modal-form-grid, .details-grid { grid-template-columns: 1fr; }
+    .form-item.full, .detail-full { grid-column: span 1; }
+}
+
+
+/* =========================================================
+   2. ESTILOS ESPECÍFICOS PARA EL MODAL DE DETALLES (NUEVO)
+   Usamos la clase .card-details para no romper lo anterior
+   ========================================================= */
+
+/* Sobrescribimos padding solo para este modal */
+.modal-card.card-details {
+    padding: 0; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado Gris */
+.card-details .modal-header {
+    background: #f8fafc;
+    padding: 20px 30px;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Quitamos el borde inferior del título porque ya lo tiene el header */
+.card-details .modal-title {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.card-details .modal-body {
+    padding: 30px;
+}
+
+.card-details .modal-footer {
+    padding: 20px 30px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Estilos de texto específicos para detalles */
+.detail-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-group label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.detail-value {
+    font-size: 1rem;
+    color: #1e293b;
+    font-weight: 500;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 5px;
+}
+
+.section-divider {
+    grid-column: span 2;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 10px 0;
+}
+
+.money-highlight {
+    font-size: 1.4rem;
+    color: #8b0000;
+    font-weight: 800;
+    border: none;
+}
+
+.iva-highlight {
+    color: #64748b;
+    font-weight: 600;
+}
+
+.status-badge-large {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+}
